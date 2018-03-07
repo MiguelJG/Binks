@@ -6,12 +6,14 @@ import java.util.concurrent.TimeUnit;
 public class Binks{
 	JFrame frame;
 	Timer timer;
+	public Boolean audio;
 	
 	final int MINPOS = 00;
 	final int MAXPOS = 1000;
-	public static boolean AUDIO = true;
+	
 	Binks(){
-        this.timer = new Timer();
+		this.audio = new Boolean(true);
+        this.timer = new Timer(this.audio);
 		this.frame = new JFrame("Jar Jar");
         ImageIcon icon = new ImageIcon("resources/jarjar.jpg");
         JLabel label = new JLabel(icon);
@@ -35,7 +37,9 @@ public class Binks{
         }catch(Exception e) {
         	;
         }
-    	Binks.AUDIO = false;
+        for(int i = 0; i < 10; i++) {
+        	jarjars.get(i).audio = false;
+        }
 	}   
         
 	}

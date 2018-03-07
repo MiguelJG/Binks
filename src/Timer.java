@@ -1,10 +1,14 @@
 public class Timer extends Thread{
-
 	private BinksUtils utils = new BinksUtils();
-
+	Boolean asdf;
+	
+	Timer(Boolean s) { 
+		asdf = s; 
+	}
+	
     @Override
 	public void run(){
-		while (Binks.AUDIO){
+		while (asdf){
 			try {
 				Thread.sleep(utils.randInt(0, 2000)); //to start all the meesas at different times
 			} catch (InterruptedException e) {
